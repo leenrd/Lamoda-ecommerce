@@ -1,0 +1,49 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: var(--clr-textDark);
+  padding: 3em;
+  z-index: 1000;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  outline: 1px solid black;
+}
+
+.gridModal {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3em;
+}
+
+.leftModal {
+  min-width: 30em;
+}
+
+.rightModal {
+  display: flex;
+  align-items: center;
+}
+
+.headModal {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.nameModal,
+.instockModal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  align-items: center;
+}
+.checkOut {
+  margin-top: 3em;
+}

@@ -1,0 +1,127 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0.5em 5em;
+  background: transparent;
+}
+
+.active {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  outline: 0.5px solid rgba(187, 187, 187, 0.75);
+}
+
+.logolink {
+  font-weight: 800;
+  font-size: 1.7em;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-textDark);
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  font-weight: 600;
+}
+
+.navlinks a {
+  /* cursor: pointer; */
+  text-decoration: none;
+  color: var(--clr-textDark);
+}
+
+.navlinks a:hover {
+  transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+}
+.left {
+  display: flex;
+  align-items: center;
+}
+.right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+}
+.right button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.fa-cart-shopping {
+  font-size: 1.3em;
+  color: var(--clr-textDark);
+  padding: 0.5em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: transparent;
+}
+
+.fa-cart-shopping:hover {
+  background-color: rgb(242, 242, 242, 0.4);
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+}
+
+.notification-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-icon::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--clr-accentGold);
+}
+
+.right .mobileBars {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navlinks {
+    display: none;
+  }
+  .right .mobileBars {
+    display: block;
+    cursor: pointer;
+  }
+  nav {
+    grid-template-columns: 1fr 1fr;
+  }
+}

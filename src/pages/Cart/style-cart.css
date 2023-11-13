@@ -1,0 +1,231 @@
+.cartSheet {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  height: 100vh;
+  width: 500px;
+  background-color: var(--clr-neutral);
+  padding: 1.5em 2em;
+  border-left: 1px solid #242323;
+  animation: cart 0.4s ease-in-out;
+  -webkit-animation: cart 0.4s ease-in-out;
+}
+
+@keyframes cart {
+  from {
+    transform: translateX(500px);
+    -webkit-transform: translateX(500px);
+    -moz-transform: translateX(500px);
+    -ms-transform: translateX(500px);
+    -o-transform: translateX(500px);
+  }
+  to {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
+
+.cartEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10em;
+}
+.cartEmpty button {
+  margin-top: 2%;
+}
+.cartEmpty .emptyStateImage {
+  max-width: 100%;
+  width: 250px;
+}
+
+.headCart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart {
+  font-weight: 600;
+}
+
+.cartItems {
+  height: 60%;
+  overflow-y: scroll;
+}
+.cartItems .emptyText {
+  padding: 2em;
+}
+.transaction * {
+  margin-bottom: 5px;
+}
+.text-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkOut {
+  width: 100%;
+  font-family: var(--font-regular);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: var(--clr-textDark);
+  color: var(--clr-greyDark);
+  padding: 0.8em 1.7em;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkOut:hover {
+  background-color: #242323;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+}
+
+.screenOverlay {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  position: fixed;
+  background-color: #00000075;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+
+/* CartItem */
+
+.boxItem {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  outline: 1px solid grey;
+  margin: 0.5em 0.2em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.boxItem img {
+  height: 100px;
+  width: auto;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-right: 1em;
+}
+.Cartgrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.itemName,
+.total *,
+.Cartright span {
+  font-weight: 600;
+}
+.Cartgrid .tick {
+  padding: 0.3em 0.8em;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  color: green;
+  background-color: rgb(221, 248, 221);
+  font-size: 13px;
+  margin-left: em;
+}
+
+.operations .remove {
+  padding: 0.5em;
+  font-weight: 200;
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.Cartgrid {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+.Cartleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 5px;
+}
+
+.Cartright {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  gap: 0.3em;
+}
+
+.adder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 6px;
+  margin-right: 5px;
+}
+
+.adder .plus,
+.adder .minus {
+  padding: 5px 8px;
+  font-weight: 600;
+  color: white;
+  background-color: #242323;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.adder .minus {
+  padding-inline: 9px;
+}
+
+.adder span {
+  padding: 1.3px 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border: 0.6px solid black;
+}

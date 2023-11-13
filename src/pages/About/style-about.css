@@ -1,0 +1,75 @@
+
+.body {
+  margin-inline: 4vw ;
+}
+.firstP{
+    font-weight:bold;
+    font-size:1.2rem;
+}
+.containermoda{
+    position: relative;
+    width:60vw;
+    height:45vw;
+    overflow:hidden;
+    left:15%;
+    border-radius:1rem;
+    margin-bottom:3rem;
+}
+.firstPic{
+    position:absolute; 
+    width:100%;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.containerlac,.containerlac2{
+  width:26vw; 
+  height:62vh; 
+  position:relative;
+  overflow:hidden;
+  border-radius:1rem;
+}
+
+.secondPic,.thirdPic{
+  position:absolute; 
+  top:0; 
+  bottom:0; 
+  margin: auto;
+  width:100%;
+  height:100%;
+}
+.firstP,
+.secondP,
+.thirdP {
+  margin-bottom: 5em;
+  font-weight: bold;
+}
+.firstPic,
+.secondPic,
+.thirdPic {
+    object-fit: cover;
+    height:100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-bottom: 5em;
+}
+
+.firstPic{
+    height:143vh;
+    width:90vw;
+}
+
+.secondPic,
+.thirdPic {
+  width: 26vw;
+}
+
+
+.two-cont {
+  display: flex;
+  justify-content: space-around;
+}

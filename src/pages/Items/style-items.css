@@ -1,0 +1,40 @@
+
+.filters {
+  display: flex;
+  margin-top: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.filters button {
+  margin-right: 10px;
+}
+
+.clicked {
+  font-family: var(--font-regular);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-textDark);
+  background-color: transparent;
+  padding: 0.8em 1.7em;
+  border: none;
+  outline: 1px solid var(--clr-textDark);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+.items-cont {
+  margin: 3em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 5em;
+}
+
+.items-cont {
+  margin-bottom: 7em;
+}

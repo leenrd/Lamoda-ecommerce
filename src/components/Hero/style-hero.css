@@ -1,0 +1,92 @@
+@font-face {
+  font-family: Morgenwalsh;
+  src: url(../../../public/assets/fonts/Morgenwalsh.otf);
+}
+
+header {
+  height: 100vh;
+  width: 95%;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  background: url("/public/assets/hero-bg.jpg") no-repeat;
+  background-size: cover;
+  /* background-position: 10px; */
+  border-radius: 0 0 1rem 1rem;
+  padding-bottom: 6em;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+}
+
+.title {
+  font-size: 7rem;
+  font-family: "Morgenwalsh", sans-serif;
+  color: var(--clr-accentGold);
+  text-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  animation: slide 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  -webkit-animation: slide 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  text-align: center;
+}
+
+@keyframes slide {
+  to {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-neutral);
+  text-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  animation: slide 4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  -webkit-animation: slide 4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.subtext > span {
+  font-weight: 600;
+}
+
+.fa-chevron-down {
+  position: absolute;
+  top: 650px;
+  margin: auto;
+  font-size: 1.3em;
+  color: var(--clr-neutral);
+  padding: 0.5em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: transparent;
+}
+
+.mask {
+  overflow: hidden;
+  padding: 2em;
+}

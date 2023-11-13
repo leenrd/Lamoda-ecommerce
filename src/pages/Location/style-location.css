@@ -1,0 +1,82 @@
+.location-content {
+    background-color: #f4f4f4;
+    position: relative;
+}
+.stores {
+    display: inline-flex;
+    gap: 2em;
+    overflow-x: auto;
+    margin-left: 10em;
+    margin-bottom: 7em;
+    width: calc(100vw - 10em);
+    scroll-behavior: smooth;
+}
+
+.stores::-webkit-scrollbar {
+    height: 0.75rem;
+}
+
+.stores::-webkit-scrollbar-track {
+    background-color: var(--clr-slate);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.stores::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accentGold);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+.stores .cardel {
+    min-width: 500px;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 1.8em;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 3em;
+}
+
+.stores .storeImg {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.stores .desc {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: .6em;
+}
+
+.stores .description {
+    text-align: start;
+    font-size: 14px;
+    margin-bottom: 1.5em;
+}
+
+.nextbtn {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+}
+
+
+.prevbtn {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+}
