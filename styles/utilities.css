@@ -139,6 +139,7 @@ svg {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-ghost:hover {

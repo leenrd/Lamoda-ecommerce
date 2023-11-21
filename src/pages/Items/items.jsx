@@ -1,12 +1,12 @@
 import "./style-items.css";
-import { useState, useContext } from "react";
-import { sampleBread } from "../../data/breadsData";
+import axios from "axios";
+import { useState, useContext, useEffect } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import Card from "../../components/Card";
 
 const Items = () => {
   const { addToCart } = useContext(ShopContext);
-  const [data, setData] = useState(sampleBread);
+  const [data, setData] = useState([]);
   const [pressed, setPressed] = useState([
     {
       id: 1,
@@ -34,9 +34,20 @@ const Items = () => {
     },
   ]);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000")
+      .then((res) => {
+        setData(res.data.data);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  }, []);
+
   const filterItems = (categ, id) => {
-    const filteredItems = sampleBread.filter((bread) => {
-      return bread.tags.includes(categ);
+    const filteredItems = data.filter((cloth) => {
+      return cloth.tags.includes(categ);
     });
 
     setPressed((prev) =>

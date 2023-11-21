@@ -8,6 +8,7 @@ import About from "./pages/About/about";
 import Location from "./pages/Location/Location";
 import PageNotFound from "./pages/PageNotFound/page-not-found";
 import Footer from "./components/Footer/footer";
+import AuthPage from "./pages/auth/AuthPage";
 import { ShopContextProvider } from "./context/ShopContext";
 import ScrollToTop from "./components/scrollRestore";
 export const CartContext = createContext();
@@ -45,6 +46,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/location" element={<Location />} />
               <Route path="*" element={<PageNotFound />} />
+              <Route path="/auth" element={<AuthPage />} />
             </Routes>
             <Footer />
           </CartContext.Provider>
