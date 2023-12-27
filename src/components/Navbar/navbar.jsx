@@ -48,7 +48,7 @@ const Navbar = () => {
               Locations{" "}
             </Link>
             <Link className="btn-ghost" to="/auth">
-              Log in
+              Join
             </Link>
           </div>
           <div className="right">
