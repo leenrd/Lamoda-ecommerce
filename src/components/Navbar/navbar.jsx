@@ -6,7 +6,7 @@ import { CartContext } from "../../App";
 import { ShopContext } from "../../context/ShopContext";
 import CartButton from "../cart-button";
 
-const Navbar = () => {
+const Navbar = ({ userVerify }) => {
   const [navbar, setNavbar] = useState(false);
   const { cartOn, handleCart } = useContext(CartContext);
   const { cartItems } = useContext(ShopContext);
@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <>
-      {cartOn && <Cart cartFunction={handleCart} />}
+      {cartOn && <Cart cartFunction={handleCart} userVerify={userVerify} />}
       <div className={navbar ? "navbar active" : "navbar"}>
         <nav>
           <div className="left">

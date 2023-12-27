@@ -49,7 +49,7 @@ function App() {
               setOpenModal,
             }}
           >
-            <Navbar />
+            <Navbar userVerify={userVerify} />
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/items" element={<Items />} />

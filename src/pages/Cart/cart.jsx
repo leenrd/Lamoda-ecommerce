@@ -3,7 +3,7 @@ import "./style-cart.css";
 import { sampleBread } from "../../data/breadsData";
 import { useContext } from "react";
 
-function Cart({ cartFunction }) {
+function Cart({ cartFunction, userVerify }) {
   const { cartItems, removeItem, TotalCart } = useContext(ShopContext);
   const itemAmount = Object.values(cartItems).reduce(
     (accumulator, currentValue) => accumulator + currentValue,
@@ -12,43 +12,50 @@ function Cart({ cartFunction }) {
 
   return (
     <>
-      <div className="screenOverlay" onClick={() => cartFunction()}></div>
-      <div className="cartSheet">
-        <div className="headCart">
-          <div className="cart">Cart({0 || itemAmount})</div>
-          <button
-            className="closeCart btn-primary"
-            onClick={() => cartFunction()}
-          >
-            <i className="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-        <hr />
-        {itemAmount < 1 ? (
-          <CartEmpty cartFunction={cartFunction} />
-        ) : (
-          <>
-            <div className="cartItems">
-              {sampleBread.map((bread) => {
-                if (cartItems[bread.id] !== 0) {
-                  return (
-                    <CartItem
-                      image={bread.imageName}
-                      name={bread.name}
-                      inStock={bread.inStock}
-                      price={bread.price}
-                      imageAlt={bread.imageAlt}
-                      removeItemFromCart={() => removeItem(bread.id)}
-                      key={bread.id}
-                      id={bread.id}
-                    />
-                  );
-                }
-              })}
+      <div className="screenOverlay" onClick={() => cartFunction()}>
+        <div className="cartSheet">
+          {!userVerify ? (
+            <h2>pls sign in</h2>
+          ) : (
+            <div>
+              <div className="headCart">
+                <div className="cart">Cart({0 || itemAmount})</div>
+                <button
+                  className="closeCart btn-primary"
+                  onClick={() => cartFunction()}
+                >
+                  <i className="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <hr />
+              {itemAmount < 1 ? (
+                <CartEmpty cartFunction={cartFunction} />
+              ) : (
+                <>
+                  <div className="cartItems">
+                    {sampleBread.map((bread) => {
+                      if (cartItems[bread.id] !== 0) {
+                        return (
+                          <CartItem
+                            image={bread.imageName}
+                            name={bread.name}
+                            inStock={bread.inStock}
+                            price={bread.price}
+                            imageAlt={bread.imageAlt}
+                            removeItemFromCart={() => removeItem(bread.id)}
+                            key={bread.id}
+                            id={bread.id}
+                          />
+                        );
+                      }
+                    })}
+                  </div>
+                  <TransactionInfo totalFunction={() => TotalCart()} />
+                </>
+              )}
             </div>
-            <TransactionInfo totalFunction={() => TotalCart()} />
-          </>
-        )}
+          )}
+        </div>
       </div>
     </>
   );
