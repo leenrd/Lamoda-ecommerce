@@ -1,22 +1,17 @@
 import "./AuthPage.css";
 import { app, auth } from "../../../config/firebaseConfig";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const provider = new GoogleAuthProvider();
 
-const AuthPage = () => {
-  const [GauthClicked, setGauthClicked] = useState(false);
-  const [userVerify, setUserVerify] = useState(false);
-
-  const handleVerification = () => {
-    setUserVerify((prev) => !prev);
-  };
-
-  const handleGAuth = () => {
-    setGauthClicked((prev) => !prev);
-  };
-
+const AuthPage = ({
+  GauthClicked,
+  setGauthClicked,
+  userVerify,
+  handleVerification,
+  handleGAuth,
+}) => {
   useEffect(() => {
     if (GauthClicked) {
       const auth = getAuth();
@@ -41,7 +36,10 @@ const AuthPage = () => {
     <>
       <main>
         {userVerify ? (
-          <h1>User is verified</h1>
+          <div>
+            <img src="assets/LovingDoodle.png" />
+            <h1>User is verified</h1>
+          </div>
         ) : (
           <div className="auth-left">
             <div className="auth-container">

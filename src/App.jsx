@@ -16,6 +16,16 @@ export const CartContext = createContext();
 function App() {
   const [cartOn, setCartOn] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [GauthClicked, setGauthClicked] = useState(false);
+  const [userVerify, setUserVerify] = useState(false);
+
+  const handleVerification = () => {
+    setUserVerify((prev) => !prev);
+  };
+
+  const handleGAuth = () => {
+    setGauthClicked((prev) => !prev);
+  };
 
   const handleBuy = () => {
     setOpenModal((prev) => !prev);
@@ -46,7 +56,18 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/location" element={<Location />} />
               <Route path="*" element={<PageNotFound />} />
-              <Route path="/auth" element={<AuthPage />} />
+              <Route
+                path="/auth"
+                element={
+                  <AuthPage
+                    GauthClicked={GauthClicked}
+                    handleGAuth={handleGAuth}
+                    handleVerification={handleVerification}
+                    setGauthClicked={setGauthClicked}
+                    userVerify={userVerify}
+                  />
+                }
+              />
             </Routes>
             <Footer />
           </CartContext.Provider>
