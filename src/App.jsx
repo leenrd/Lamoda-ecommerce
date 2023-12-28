@@ -11,17 +11,13 @@ import Footer from "./components/Footer/footer";
 import AuthPage from "./pages/auth/AuthPage";
 import { ShopContextProvider } from "./context/ShopContext";
 import ScrollToTop from "./components/scrollRestore";
+import { UserProvider } from "./context/UserContext";
 export const CartContext = createContext();
 
 function App() {
   const [cartOn, setCartOn] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [GauthClicked, setGauthClicked] = useState(false);
-  const [userVerify, setUserVerify] = useState(false);
-
-  const handleVerification = () => {
-    setUserVerify((prev) => !prev);
-  };
 
   const handleGAuth = () => {
     setGauthClicked((prev) => !prev);
@@ -39,38 +35,38 @@ function App() {
       <Router>
         <ScrollToTop />
         <ShopContextProvider>
-          <CartContext.Provider
-            value={{
-              cartOn,
-              setCartOn,
-              handleCart,
-              handleBuy,
-              openModal,
-              setOpenModal,
-            }}
-          >
-            <Navbar userVerify={userVerify} />
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/items" element={<Items />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/location" element={<Location />} />
-              <Route path="*" element={<PageNotFound />} />
-              <Route
-                path="/auth"
-                element={
-                  <AuthPage
-                    GauthClicked={GauthClicked}
-                    handleGAuth={handleGAuth}
-                    handleVerification={handleVerification}
-                    setGauthClicked={setGauthClicked}
-                    userVerify={userVerify}
-                  />
-                }
-              />
-            </Routes>
-            <Footer />
-          </CartContext.Provider>
+          <UserProvider>
+            <CartContext.Provider
+              value={{
+                cartOn,
+                setCartOn,
+                handleCart,
+                handleBuy,
+                openModal,
+                setOpenModal,
+              }}
+            >
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/items" element={<Items />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/location" element={<Location />} />
+                <Route path="*" element={<PageNotFound />} />
+                <Route
+                  path="/auth"
+                  element={
+                    <AuthPage
+                      GauthClicked={GauthClicked}
+                      handleGAuth={handleGAuth}
+                      setGauthClicked={setGauthClicked}
+                    />
+                  }
+                />
+              </Routes>
+              <Footer />
+            </CartContext.Provider>
+          </UserProvider>
         </ShopContextProvider>
       </Router>
     </>

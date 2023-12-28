@@ -4,7 +4,7 @@ import { ShopContext } from "../../context/ShopContext";
 import Card from "../Card";
 import { useContext } from "react";
 
-const Deals = () => {
+const Deals = ({ userVerify }) => {
   const sampleOne = sampleBread[0];
   const sampleTwo = sampleBread[2];
   const { addToCart } = useContext(ShopContext);

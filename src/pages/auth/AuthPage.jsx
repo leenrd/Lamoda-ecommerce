@@ -2,16 +2,12 @@ import "./AuthPage.css";
 import { app, auth } from "../../../config/firebaseConfig";
 import { useEffect } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useUserContext } from "../../context/UserContext";
 
 const provider = new GoogleAuthProvider();
 
-const AuthPage = ({
-  GauthClicked,
-  setGauthClicked,
-  userVerify,
-  handleVerification,
-  handleGAuth,
-}) => {
+const AuthPage = ({ GauthClicked, setGauthClicked, handleGAuth }) => {
+  const { userVerify, setUserVerification } = useUserContext();
   useEffect(() => {
     if (GauthClicked) {
       const auth = getAuth();
@@ -19,7 +15,8 @@ const AuthPage = ({
         .then((result) => {
           // const credential = GoogleAuthProvider.credentialFromResult(result);
           const user = result.user;
-          if (user.reloadUserInfo.emailVerified) handleVerification();
+          if (user.reloadUserInfo.emailVerified)
+            setUserVerification((prev) => !prev);
           // console.log(user.reloadUserInfo);
         })
         .catch((error) => {
@@ -30,7 +27,7 @@ const AuthPage = ({
         });
       setGauthClicked(false);
     }
-  }, [GauthClicked]);
+  }, [GauthClicked, setUserVerification]);
 
   return (
     <>

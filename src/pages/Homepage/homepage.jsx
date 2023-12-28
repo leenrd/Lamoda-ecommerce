@@ -7,7 +7,7 @@ import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { LocationCard } from "../Location/Location";
 
-function Homepage() {
+function Homepage({ userVerify }) {
   const { handleCart } = useContext(CartContext);
   const carouselRef = useRef(null);
 
@@ -30,7 +30,7 @@ function Homepage() {
         </p>
       </div>
       <hr className="lineHomepage" />
-      <Deals />
+      <Deals userVerify={userVerify} />
       <div className="items">
         <div className="con">
           <h1 className="headingTitle" style={{ color: "white" }}>

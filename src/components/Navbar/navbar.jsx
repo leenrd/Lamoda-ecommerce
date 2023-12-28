@@ -5,8 +5,10 @@ import Cart from "../../pages/Cart/cart";
 import { CartContext } from "../../App";
 import { ShopContext } from "../../context/ShopContext";
 import CartButton from "../cart-button";
+import { useUserContext } from "../../context/UserContext";
 
-const Navbar = ({ userVerify }) => {
+const Navbar = () => {
+  const { userVerify } = useUserContext();
   const [navbar, setNavbar] = useState(false);
   const { cartOn, handleCart } = useContext(CartContext);
   const { cartItems } = useContext(ShopContext);

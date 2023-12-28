@@ -12,20 +12,27 @@ function Cart({ cartFunction, userVerify }) {
 
   return (
     <>
-      <div className="screenOverlay" onClick={() => cartFunction()}>
+      <div
+        className="screenOverlay"
+        onClick={(e) => {
+          if (!e.target.closest(".cartSheet")) {
+            cartFunction();
+          }
+        }}
+      >
         <div className="cartSheet">
           {!userVerify ? (
-            <h2>pls sign in</h2>
+            <h2>pls sign in to see your items</h2>
           ) : (
             <div>
               <div className="headCart">
                 <div className="cart">Cart({0 || itemAmount})</div>
-                <button
+                {/* <button
                   className="closeCart btn-primary"
                   onClick={() => cartFunction()}
                 >
                   <i className="fa-solid fa-xmark"></i>
-                </button>
+                </button> */}
               </div>
               <hr />
               {itemAmount < 1 ? (
@@ -148,9 +155,6 @@ const CartEmpty = ({ cartFunction }) => {
         className="emptyStateImage"
       />
       <h1 className="emptyText">Your cart is empty</h1>
-      <button className="btn-secondary" onClick={() => cartFunction()}>
-        Continue Browsing
-      </button>
     </div>
   );
 };

@@ -256,3 +256,30 @@ svg {
   justify-content: center;
   gap: 10px;
 }
+
+.modalBody {
+  background-color: white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 2em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.Modaltitle {
+  font-size: large;
+}
+
+.ctaModals {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+}
