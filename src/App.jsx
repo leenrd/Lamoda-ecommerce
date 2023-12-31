@@ -1,4 +1,6 @@
 import "../styles/utilities.css";
+import { ChatAiWidget } from "@sendbird/chat-ai-widget";
+import "@sendbird/chat-ai-widget/dist/style.css";
 import Homepage from "../src/pages/Homepage/homepage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createContext, useState } from "react";
@@ -64,6 +66,10 @@ function App() {
                   }
                 />
               </Routes>
+              <ChatAiWidget
+                applicationId={import.meta.env.VITE_CHAT_WIDGET_APP_ID}
+                botId={import.meta.env.VITE_CHAT_WIDGET_BOT_ID}
+              />
               <Footer />
             </CartContext.Provider>
           </UserProvider>
