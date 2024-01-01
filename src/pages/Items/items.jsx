@@ -1,12 +1,13 @@
 import "./style-items.css";
 import axios from "axios";
+import { sampleBread } from "../../data/breadsData";
 import { useState, useContext, useEffect } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import Card from "../../components/Card";
 
 const Items = () => {
   const { addToCart } = useContext(ShopContext);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(sampleBread);
   const [pressed, setPressed] = useState([
     {
       id: 1,
@@ -34,19 +35,19 @@ const Items = () => {
     },
   ]);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:4000")
-      .then((res) => {
-        setData(res.data.data);
-      })
-      .catch((e) => {
-        console.log(e.message);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:4000")
+  //     .then((res) => {
+  //       setData(res.data.data);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e.message);
+  //     });
+  // }, []);
 
   const filterItems = (categ, id) => {
-    const filteredItems = data.filter((cloth) => {
+    const filteredItems = sampleBread.filter((cloth) => {
       return cloth.tags.includes(categ);
     });
 
