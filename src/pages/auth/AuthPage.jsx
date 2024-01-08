@@ -1,13 +1,65 @@
 import "./AuthPage.css";
-import { app, auth } from "../../../config/firebaseConfig";
-import { useEffect } from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+// import { app, auth } from "../../../config/firebaseConfig";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
 import { useUserContext } from "../../context/UserContext";
 
 const provider = new GoogleAuthProvider();
 
-const AuthPage = ({ GauthClicked, setGauthClicked, handleGAuth }) => {
+const AuthPage = ({
+  GauthClicked,
+  setGauthClicked,
+  handleGAuth,
+  handleEmailSignIn,
+  signClicked,
+}) => {
   const { userVerify, setUserVerification } = useUserContext();
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePass = (event) => {
+    setPass(event.target.value);
+  };
+
+  useEffect(() => {
+    if (signClicked) {
+      const auth = getAuth();
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+
+          // Send email verification
+          if (!user.emailVerified) {
+            sendEmailVerification(auth.currentUser)
+              .then(() => {
+                console.log("Verification email sent");
+              })
+              .catch((error) => {
+                console.error("Error sending verification email", error);
+              });
+          }
+
+          setUserVerification(user.emailVerified);
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          console.error(errorMessage);
+        });
+    }
+  }, [signClicked, setUserVerification]);
+
   useEffect(() => {
     if (GauthClicked) {
       const auth = getAuth();
@@ -21,7 +73,6 @@ const AuthPage = ({ GauthClicked, setGauthClicked, handleGAuth }) => {
         })
         .catch((error) => {
           console.log(error.message);
-          // The email of the user's account used.
           console.log(error.customData.email);
           console.log(GoogleAuthProvider.credentialFromError(error));
         });
@@ -54,6 +105,7 @@ const AuthPage = ({ GauthClicked, setGauthClicked, handleGAuth }) => {
                     id="email"
                     type="text"
                     placeholder="eg.JohnLeenard@email.com"
+                    onChange={handleEmail}
                     required
                   />
                 </div>
@@ -63,15 +115,20 @@ const AuthPage = ({ GauthClicked, setGauthClicked, handleGAuth }) => {
                     id="password"
                     type="password"
                     placeholder="Must be at least 8 characters"
+                    onChange={handlePass}
                     required
                   />
                 </div>
 
                 <span>
-                  Don’t have an account yet? <a href="/">Sign in</a>
+                  Don’t have an account yet? <Link to="/register">Sign in</Link>
                 </span>
                 <div className="auth-cta">
-                  <button className="btn-secondary" id="loginBtn">
+                  <button
+                    className="btn-secondary"
+                    id="loginBtn"
+                    onClick={handleEmailSignIn}
+                  >
                     Log in
                   </button>
                   <span>or</span>

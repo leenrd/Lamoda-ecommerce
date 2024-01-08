@@ -127,6 +127,30 @@ main {
   min-width: 500px;
   width: 100%;
 }
+.auth-form .auth-input #repassword {
+  padding: 1em;
+  border: 1px solid rgb(155, 155, 155);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  min-width: 445px;
+  width: 100%;
+}
+
+.idFOrReg {
+  text-decoration: none;
+  color: white;
+}
+
+.okReg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+}
 
 .auth-form .auth-input #email {
   padding: 1em;

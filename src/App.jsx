@@ -11,6 +11,7 @@ import Location from "./pages/Location/Location";
 import PageNotFound from "./pages/PageNotFound/page-not-found";
 import Footer from "./components/Footer/footer";
 import AuthPage from "./pages/auth/AuthPage";
+import RegPage from "./pages/auth/RegPage";
 import { ShopContextProvider } from "./context/ShopContext";
 import ScrollToTop from "./components/scrollRestore";
 import { UserProvider } from "./context/UserContext";
@@ -20,9 +21,17 @@ function App() {
   const [cartOn, setCartOn] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [GauthClicked, setGauthClicked] = useState(false);
+  const [signClicked, setSignClicked] = useState(false);
+  const [acc, setAcc] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
 
   const handleGAuth = () => {
     setGauthClicked((prev) => !prev);
+  };
+
+  const handleEmailSignIn = () => {
+    setSignClicked((prev) => !prev);
   };
 
   const handleBuy = () => {
@@ -60,8 +69,30 @@ function App() {
                   element={
                     <AuthPage
                       GauthClicked={GauthClicked}
+                      signClicked={signClicked}
                       handleGAuth={handleGAuth}
+                      handleEmailSignIn={handleEmailSignIn}
                       setGauthClicked={setGauthClicked}
+                      email={email}
+                      password={password}
+                      setEmail={setEmail}
+                      setPass={setPass}
+                    />
+                  }
+                />
+                <Route
+                  path="/register"
+                  element={
+                    <RegPage
+                      GauthClicked={signClicked}
+                      handleGAuth={handleEmailSignIn}
+                      setGauthClicked={setSignClicked}
+                      acc={acc}
+                      setAcc={setAcc}
+                      email={email}
+                      password={password}
+                      setEmail={setEmail}
+                      setPass={setPass}
                     />
                   }
                 />
