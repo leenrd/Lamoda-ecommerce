@@ -34,12 +34,11 @@ function Homepage({ userVerify }) {
       <div className="items">
         <div className="con">
           <h1 className="headingTitle" style={{ color: "white" }}>
-            Fashion Week
+            Fall Collection on Sale
           </h1>
           <p className="headsubText">
-            When you buy from us, you're not just buying clothes; you're
-            acquiring wearable pieces of art that reflect your individuality and
-            cultural appreciation.
+            When you buy a piece from the fall collection(blouses) you get a 20%
+            discount on your second item.
           </p>
           <div className="cta">
             <Link

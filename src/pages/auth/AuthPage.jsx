@@ -32,15 +32,13 @@ const AuthPage = ({
   };
 
   useEffect(() => {
+    const auth = getAuth();
+
     if (signClicked) {
-      const auth = getAuth();
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Signed in
           const user = userCredential.user;
-          console.log(user);
 
-          // Send email verification
           if (!user.emailVerified) {
             sendEmailVerification(auth.currentUser)
               .then(() => {
@@ -54,11 +52,10 @@ const AuthPage = ({
           setUserVerification(user.emailVerified);
         })
         .catch((error) => {
-          const errorMessage = error.message;
-          console.error(errorMessage);
+          console.error(error.message);
         });
     }
-  }, [signClicked, setUserVerification]);
+  }, [signClicked, email, password, setUserVerification]);
 
   useEffect(() => {
     if (GauthClicked) {

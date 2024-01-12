@@ -8,6 +8,7 @@ export const sampleBread = [
     price: 500,
     inStock: "In Stock",
     tags: ["Blouse", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 2,
@@ -17,7 +18,9 @@ export const sampleBread = [
     imageAlt: "Dark Blueimage",
     price: 600,
     inStock: "In Stock",
+    colors: ["Red", "Black", "Blue"],
     tags: ["Dress", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 3,
@@ -27,7 +30,9 @@ export const sampleBread = [
     imageAlt: "Green Blouse Image",
     price: 500,
     inStock: "In Stock",
+    colors: ["Red", "Green", "Purple"],
     tags: ["Blouse", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 4,
@@ -37,7 +42,9 @@ export const sampleBread = [
     imageAlt: "Pink Topimage",
     price: 600,
     inStock: "In Stock",
+    colors: ["Red", "Black", "Blue", "Green", "Purple"],
     tags: ["Top", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 5,
@@ -47,7 +54,9 @@ export const sampleBread = [
     imageAlt: "White Dress image",
     price: 700,
     inStock: "In Stock",
+    colors: ["Red", "Black", "Blue", "Green", "Purple"],
     tags: ["Dress", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 6,
@@ -57,7 +66,9 @@ export const sampleBread = [
     imageAlt: "White Top image",
     price: 500,
     inStock: "In Stock",
+    colors: ["Black", "Blue", "Green"],
     tags: ["Top", "Dress", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 7,
@@ -67,7 +78,9 @@ export const sampleBread = [
     imageAlt: "Green Dress image",
     price: 600,
     inStock: "In Stock",
+    colors: ["Green", "Blue", "Orange"],
     tags: ["Dress", "Blouse", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 8,
@@ -77,7 +90,9 @@ export const sampleBread = [
     imageAlt: "Orange Dress image",
     price: 550,
     inStock: "In Stock",
+    colors: ["Red", "Brown", "Cream"],
     tags: ["Dress", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
   {
     id: 9,
@@ -87,6 +102,8 @@ export const sampleBread = [
     imageAlt: "Black Dressimage",
     price: 700,
     inStock: "In Stock",
+    colors: ["Red", "Black", "Cyan"],
     tags: ["Dress", "Blouse", "All"],
+    sizes: ["xs", "s", "m", "l"],
   },
 ];
