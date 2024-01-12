@@ -88,6 +88,8 @@ const Items = () => {
               imageName={bread.imageName}
               imageAlt={bread.imageAlt}
               price={bread.price}
+              sizes={bread.sizes}
+              colors={bread.colors}
               id={bread.id}
               key={bread.id}
               addItemToCart={() => addToCart(bread.id)}

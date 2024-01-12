@@ -11,6 +11,8 @@ const Card = ({
   imageName,
   imageAlt,
   price,
+  sizes,
+  colors,
   addItemToCart,
   id,
 }) => {
@@ -47,8 +49,12 @@ const Card = ({
           placeholder="/assets/placeholder.png"
         />
         <h3>{name}</h3>
-        <p className="price">{price} ₽/pc</p>
-        <p className="description">{description}</p>
+        <p className="price">
+          {price} ₽/pc • {sizes}
+        </p>
+        <p className="description">
+          {description} • Colors: {colors}
+        </p>
         <div className="buttons">
           <button className="btn-secondary" onClick={handleCardClick}>
             Buy
