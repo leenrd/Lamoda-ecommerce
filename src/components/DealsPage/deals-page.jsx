@@ -22,6 +22,8 @@ const Deals = ({ userVerify }) => {
           imageName={sampleOne.imageName}
           imageAlt={sampleOne.imageAlt}
           price={sampleOne.price}
+          sizes={sampleOne.sizes}
+          colors={sampleOne.colors}
           key={sampleOne.id}
           id={sampleOne.id}
           addItemToCart={() => addToCart(sampleOne.id)}
@@ -32,6 +34,8 @@ const Deals = ({ userVerify }) => {
           imageName={sampleTwo.imageName}
           imageAlt={sampleTwo.imageAlt}
           price={sampleTwo.price}
+          sizes={sampleTwo.sizes}
+          colors={sampleTwo.colors}
           key={sampleTwo.id}
           id={sampleTwo.id}
           addItemToCart={() => addToCart(sampleTwo.id)}
