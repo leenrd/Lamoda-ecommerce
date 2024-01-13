@@ -1,7 +1,7 @@
 export const sampleBread = [
   {
     id: 1,
-    name: "Blouse 1",
+    name: "Fall Blouse",
     description: "Black Blouse",
     imageName: "JPG.jpg",
     imageAlt: "Black Blouse Image",
@@ -13,7 +13,7 @@ export const sampleBread = [
   },
   {
     id: 2,
-    name: "Dress",
+    name: "Summer Navy",
     description: "Dark Blue Dress",
     imageName: "JPG2.jpg",
     imageAlt: "Dark Blueimage",
@@ -25,7 +25,7 @@ export const sampleBread = [
   },
   {
     id: 3,
-    name: "Blouse 2",
+    name: "Forest Flush",
     description: "Green Blouse",
     imageName: "JPG3.jpg",
     imageAlt: "Green Blouse Image",
@@ -37,7 +37,7 @@ export const sampleBread = [
   },
   {
     id: 4,
-    name: "Top",
+    name: "Girl Top",
     description: "Pink Top",
     imageName: "JPG4.jpg",
     imageAlt: "Pink Topimage",
@@ -49,7 +49,7 @@ export const sampleBread = [
   },
   {
     id: 5,
-    name: "Dress 2",
+    name: "Clean Dress",
     description: "White Dress",
     imageName: "JPG5.jpg",
     imageAlt: "White Dress image",
@@ -61,7 +61,7 @@ export const sampleBread = [
   },
   {
     id: 6,
-    name: "Top 2",
+    name: "White Casual",
     description: "White Top",
     imageName: "veromoda-top-grey.jpg",
     imageAlt: "White Top image",
@@ -73,7 +73,7 @@ export const sampleBread = [
   },
   {
     id: 7,
-    name: "Dress 3",
+    name: "Green Everglade",
     description: "Green Dress",
     imageName: "veromoda-shirtdress-green.jpg",
     imageAlt: "Green Dress image",
@@ -85,7 +85,7 @@ export const sampleBread = [
   },
   {
     id: 8,
-    name: "Dress 4",
+    name: "Joyful Fruity",
     description: "Orange Dress",
     imageName: "dress 4.jpg",
     imageAlt: "Orange Dress image",
@@ -97,7 +97,7 @@ export const sampleBread = [
   },
   {
     id: 9,
-    name: "Dress 5",
+    name: "Luxury Black",
     description: "Black Dress",
     imageName: "Dress5.jpeg",
     imageAlt: "Black Dressimage",
