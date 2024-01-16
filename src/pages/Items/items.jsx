@@ -93,6 +93,7 @@ const Items = () => {
               id={bread.id}
               key={bread.id}
               addItemToCart={() => addToCart(bread.id)}
+              avlStock={bread.avlStock}
             />
           );
         })}

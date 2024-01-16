@@ -27,6 +27,7 @@ const Deals = ({ userVerify }) => {
           key={sampleOne.id}
           id={sampleOne.id}
           addItemToCart={() => addToCart(sampleOne.id)}
+          avlStock={sampleOne.avlStock}
         />
         <Card
           name={sampleTwo.name}
@@ -39,6 +40,7 @@ const Deals = ({ userVerify }) => {
           key={sampleTwo.id}
           id={sampleTwo.id}
           addItemToCart={() => addToCart(sampleTwo.id)}
+          avlStock={sampleTwo.avlStock}
         />
       </div>
     </div>

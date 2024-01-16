@@ -15,6 +15,7 @@ const Card = ({
   colors,
   addItemToCart,
   id,
+  avlStock,
 }) => {
   const { cartItems } = useContext(ShopContext);
   const { userVerify } = useUserContext();
@@ -48,7 +49,10 @@ const Card = ({
           loading="lazy"
           placeholder="/assets/placeholder.png"
         />
-        <h3>{name}</h3>
+        <div className="card-content">
+          <h3>{name}</h3>
+          <div className="stockpill">Stock: {avlStock - itemAmount}</div>
+        </div>
         <p className="price">
           {price} ₽/pc • {sizes}
         </p>
@@ -56,10 +60,7 @@ const Card = ({
           {description} • Colors: {colors}
         </p>
         <div className="buttons">
-          <button className="btn-secondary" onClick={handleCardClick}>
-            Buy
-          </button>
-          <button className="btn-primary" onClick={handleAddToCart}>
+          <button className="btn-secondary" onClick={handleAddToCart}>
             <i className="fa-solid fa-cart-plus"></i> Add to Cart{" "}
             {itemAmount > 0 && `(${itemAmount})`}
           </button>

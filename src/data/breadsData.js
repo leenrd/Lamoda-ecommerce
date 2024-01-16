@@ -10,6 +10,7 @@ export const sampleBread = [
     colors: ["Red ", "Black ", "Blue "],
     tags: ["Blouse", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 170,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const sampleBread = [
     colors: ["Red ", "Black ", "Blue "],
     tags: ["Dress", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 300,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const sampleBread = [
     colors: ["Red ", "Green ", "Purple "],
     tags: ["Blouse", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 570,
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ export const sampleBread = [
     colors: ["Red ", "Black ", "Blue ", "Green ", "Purple "],
     tags: ["Top", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 900,
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ export const sampleBread = [
     colors: ["Red ", "Black ", "Blue ", "Green ", "Purple "],
     tags: ["Dress", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 470,
   },
   {
     id: 6,
@@ -70,6 +75,7 @@ export const sampleBread = [
     colors: ["Black ", "Blue ", "Green "],
     tags: ["Top", "Dress", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 830,
   },
   {
     id: 7,
@@ -82,6 +88,7 @@ export const sampleBread = [
     colors: ["Green ", "Blue ", "Orange "],
     tags: ["Dress", "Blouse", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 290,
   },
   {
     id: 8,
@@ -94,6 +101,7 @@ export const sampleBread = [
     colors: ["Red ", "Brown ", "Cream "],
     tags: ["Dress", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 580,
   },
   {
     id: 9,
@@ -106,5 +114,6 @@ export const sampleBread = [
     colors: ["Red ", "Black ", "Cyan "],
     tags: ["Dress", "Blouse", "All"],
     sizes: ["Sizes: xs - ", "s - ", "m - ", "l"],
+    avlStock: 880,
   },
 ];

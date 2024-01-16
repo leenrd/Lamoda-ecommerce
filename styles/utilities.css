@@ -283,3 +283,23 @@ svg {
   justify-content: space-around;
   margin-top: 1em;
 }
+
+.card-content {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.stockpill {
+  background-color: #dc2626;
+  color: white;
+  font-size: small;
+  font-weight: 600;
+  padding-inline: 1em;
+  border-radius: 3em;
+  -webkit-border-radius: 3em;
+  -moz-border-radius: 3em;
+  -ms-border-radius: 3em;
+  -o-border-radius: 3em;
+}
